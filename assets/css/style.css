@@ -1,37 +1,58 @@
+body {
+    background-color: black;
+}
+
 header {
     border: 5px solid green;
+    padding-top: 35px;
     font-size: 30px;
+    color: green;
     text-align: center;
-    margin: 15px auto;
-    height: 150px;
-    width: 400px; 
+    margin: 10px auto;
+    height: 70px;
+    width: 80%; 
+}
 
+.currentWord {
+    border: solid green;
+    border-width: 5px 5px 0px 5px;
+    font-size: 30px;
+    color: green;
+    text-align: center;
+    margin: 0px auto;
+    height: 75px;
+    width: 80%;
+    
 }
 
 .underscore {
-    border: 5px solid green;
+    border: solid green;
+    border-width: 0px 5px 5px 5px;
     font-size: 100px;
+    color: green;
     text-align: center;
-    margin: 50px auto;
+    margin: 0px auto;
     height: 150px;
-    width: 60%;
+    width: 80%;
 
 }
 
 .rightGuess {
     border: 5px solid green;
-    font-size: 30px;
+    font-size: 20px;
+    color: green;
     text-align: center;
     margin: 50px auto;
-    height: 150px;
-    width: 60%;
+    height: 80px;
+    width: 80%;
 }
 
 .wrongGuess {
     border: 5px solid green;
-    font-size: 30px;
+    font-size: 20px;
+    color: green;
     text-align: center;
     margin: 50px auto;
-    height: 150px;
-    width: 60%;
+    height: 100px;
+    width: 80%;
 }

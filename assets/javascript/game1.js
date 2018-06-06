@@ -1,8 +1,8 @@
 //Global Variables
 //======================================================
 
-var wordBank = ["Access Control", "Authentication", "Back Door", "Certificate", "Denial of Service Attack", 
-"Eavesdropping", "Encryption", "Firewall", "Honey Pot", "Malware", "Man in the Middle Attack", "Padlock", "Phishing"];
+var wordBank = ["authentication", "backdoor", "certificate", 
+"eavesdropping", "encryption", "firewall", "honeypot", "malware", "padlock", "phishing"];
 var wrongLetter = [];
 var rightLetter = [];
 var underScores = [];
@@ -25,7 +25,6 @@ function startGame(){
 document.onkeyup = function(event)
 {
     userGuess = event.key;
-    console.log(userGuess);
 
 //this finds if the user guess is a letter in
 //the current word
@@ -33,27 +32,21 @@ document.onkeyup = function(event)
 //not referencing an index point youre treating it like a single item list
     if (randWord.indexOf(userGuess) > -1) 
     {
-
         for(var i = 0; i < randWord.length; i++)
         {
-            if randWord[i] === userGuess;
+            if (randWord[i] === userGuess)
             {
                 underScores[i] = userGuess;
+                console.log(underScores);
             }
-            console.log(underScores)
-        }
 
-        if(underScores.join('') == randWord) {
-            alert('You Win!')
         }
-
-    }
-    else { 
-        wrongLetter.push(userGuess)
+    }    
+    else 
+    { 
+        wrongLetter.push(userGuess);
         console.log(wrongLetter);
     }
-
-
 }
 
 
