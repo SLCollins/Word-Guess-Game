@@ -4,9 +4,10 @@
 var wordBank = ["authentication", "backdoor", "certificate", 
 "eavesdropping", "encryption", "firewall", "honeypot", "malware", "padlock", "phishing"];
 var wrongLetter = [];
-var rightLetter = [];
 var underScores = [];
 var userGuess = [];
+var remainingGuesses = 10;
+var winCounter = 0;
 
 
 //this chooses a random word from the word bank
@@ -20,7 +21,24 @@ function startGame(){
         underScores.push('_');
     }
     console.log(underScores);
+    document.querySelector('.remainingGuess').innerHTML = remainingGuesses.toString();
 }
+
+
+//this keeps track of when you win or lose
+function winLose() {
+    if (winCounter === randWord.length)
+    {
+        alert('Winner!');
+        startGame();
+    }
+    else if (remainingGuesses === 0)
+    {
+        alert('Loser!');
+        startGame();
+    }
+}
+
 //this logs user guesses
 document.onkeyup = function(event)
 {
@@ -38,6 +56,9 @@ document.onkeyup = function(event)
             {
                 underScores[i] = userGuess;
                 console.log(underScores);
+                winCounter++;
+                winLose();
+                
             }
 
         }
@@ -46,6 +67,9 @@ document.onkeyup = function(event)
     { 
         wrongLetter.push(userGuess);
         console.log(wrongLetter);
+        remainingGuesses--;
+        document.querySelector('.remainingGuess').innerHTML = remainingGuesses.toString();
+        winLose();
     }
 }
 

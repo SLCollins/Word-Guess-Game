@@ -42,7 +42,7 @@ header {
 
 }
 
-.rightGuess {
+.remainingGuess {
     border: 5px solid green;
     padding-top: 10px;
     font-size: 20px;
