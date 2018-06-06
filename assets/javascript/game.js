@@ -17,7 +17,7 @@ var randWord;
 //this function picks a random word from the wordBank array
 function startGame(){
     randWord = wordBank[Math.floor(Math.random() * wordBank.length)];
-    console.log('Randodm Word = ' + randWord);
+    console.log('Random Word = ' + randWord);
     for (var i = 0; i < randWord.length; i++)
     {
         underScores.push('_');
