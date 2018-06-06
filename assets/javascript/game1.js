@@ -19,6 +19,7 @@ function startGame(){
     for (var i = 0; i < randWord.length; i++)
     {
         underScores.push('_');
+        document.querySelector('.underscore').innerHTML = underScores.join("");
     }
     console.log(underScores);
     document.querySelector('.remainingGuess').innerHTML = remainingGuesses.toString();
