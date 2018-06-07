@@ -19,6 +19,10 @@ header {
     width: 90%; 
 }
 
+h3 {
+    font-size: 10px;
+}
+
 .currentWord {
     border: solid green;
     border-width: 5px 5px 0px 5px;
