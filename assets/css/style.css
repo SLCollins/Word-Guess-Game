@@ -2,6 +2,11 @@ body {
     background-color: black;
 }
 
+.container {
+    padding: 30px;
+    text-align: center;
+
+}
 header {
     border: 5px solid green;
     padding-top: 35px;
@@ -11,20 +16,20 @@ header {
     text-align: center;
     margin: 10px auto;
     height: 70px;
-    width: 80%; 
+    width: 90%; 
 }
 
 .currentWord {
     border: solid green;
     border-width: 5px 5px 0px 5px;
     padding-top: 10px;
-    font-size: 30px;
+    font-size: 20px;
     color: green;
     font-family: 'Press Start 2P', cursive;
     text-align: center;
     margin: 0px auto;
-    height: 75px;
-    width: 80%;
+    height: 60px;
+    width: 90%;
     
 }
 
@@ -32,36 +37,67 @@ header {
     border: solid green;
     border-width: 0px 5px 5px 5px;
     padding-top: 10px;
-    font-size: 60px;
+    font-size: 30px;
     color: green;
     font-family: 'Press Start 2P', cursive;
     text-align: center;
+    overflow: hidden;
     margin: 0px auto;
-    height: 150px;
-    width: 80%;
+    height: 80px;
+    width: 90%;
 
 }
 
-.remainingGuess {
+.numWins {
     border: 5px solid green;
-    padding-top: 10px;
+    padding: 30px;
     font-size: 20px;
     color: green;
     font-family: 'Press Start 2P', cursive;
     text-align: center;
-    margin: 50px auto;
-    height: 80px;
-    width: 80%;
+    align-content:center;
+    position: relative; 
+    overflow: hidden;
+    word-wrap: break-word;
+    display: inline-block;
+    vertical-align: top;
+    margin: auto;
+    height:200px;
+    width: 20%; 
 }
 
 .wrongGuess {
     border: 5px solid green;
-    padding-top: 10px;
+    padding: 30px;
     font-size: 20px;
     color: green;
     font-family: 'Press Start 2P', cursive;
     text-align: center;
-    margin: 50px auto;
-    height: 100px;
-    width: 80%;
+    align-content:center;
+    position: relative;
+    overflow: hidden;
+    word-wrap: break-word;
+    display: inline-block;
+    vertical-align: top;
+    margin: auto;
+    height: 200px;
+    width: 20%;
+}
+
+.remainingGuess {
+    border: 5px solid green;
+    padding: 30px;
+    font-size: 20px;
+    color: green;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    align-content:center;
+    position: relative;
+    overflow: hidden;
+    word-wrap: break-word;
+    display: inline-block;
+    vertical-align: top;
+    margin: auto;
+    height: 200px;
+    width: 20%;
 }

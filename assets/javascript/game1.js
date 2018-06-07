@@ -3,10 +3,12 @@
 
 var wordBank = ["authentication", "backdoor", "certificate", 
 "eavesdropping", "encryption", "firewall", "honeypot", "malware", "padlock", "phishing"];
+var wordBankDefinitions = ["Authentication: "]
 var wrongLetter = [];
 var underScores = [];
 var userGuess = [];
 var remainingGuesses = 10;
+var rightLetterCounter = 0;
 var winCounter = 0;
 
 
@@ -14,23 +16,34 @@ var winCounter = 0;
 function startGame(){
     randWord = wordBank[Math.floor(Math.random() * wordBank.length)];
     console.log('Random Word = ' + randWord);
-//this figures out how many underscores to
-// display for the current word    
+    //this makes sure that each new game has ten guesses and doesn't carry over results from the last game
+    underScores = [];
+    remainingGuesses = 10;
+    userGuess = [];
+    rightLetterCounter = 0;
+
+//this figures out how many underscores to display for the current word 
     for (var i = 0; i < randWord.length; i++)
     {
         underScores.push('_');
         document.querySelector('.underscore').innerHTML = underScores.join("");
     }
     console.log(underScores);
+    //this displays the number of guesses left in the remaining guesses div
     document.querySelector('.remainingGuess').innerHTML = remainingGuesses.toString();
+    //this displays the number of games the player has won while in the browser window
+    document.querySelector('.numWins').innerHTML = winCounter.toString();
+    //this resets the userGuesses to reflect the current game
+    document.querySelector('.wrongGuess').innerHTML = userGuess;
 }
 
 
 //this keeps track of when you win or lose
 function winLose() {
-    if (winCounter === randWord.length)
+    if (rightLetterCounter === randWord.length)
     {
-        alert('Winner!');
+        document.querySelector('.underscore').innerHTML = underScores.join(" ");
+        winCounter++;
         startGame();
     }
     else if (remainingGuesses === 0)
@@ -45,10 +58,8 @@ document.onkeyup = function(event)
 {
     userGuess = event.key;
 
-//this finds if the user guess is a letter in
-//the current word
-//this part is wrong because userGuess is a list but then you're
-//not referencing an index point youre treating it like a single item list
+//this finds if the user guess is a letter in the current word
+
     if (randWord.indexOf(userGuess) > -1) 
     {
         for(var i = 0; i < randWord.length; i++)
@@ -57,7 +68,8 @@ document.onkeyup = function(event)
             {
                 underScores[i] = userGuess;
                 console.log(underScores);
-                winCounter++;
+                document.querySelector('.underscore').innerHTML = underScores.join(" ");
+                rightLetterCounter++;
                 winLose();
                 
             }
@@ -67,6 +79,7 @@ document.onkeyup = function(event)
     else 
     { 
         wrongLetter.push(userGuess);
+        document.querySelector('.wrongGuess').innerHTML = wrongLetter
         console.log(wrongLetter);
         remainingGuesses--;
         document.querySelector('.remainingGuess').innerHTML = remainingGuesses.toString();

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Cyber Security Hangman</title>
+    <meta charset="UTF-8">
+    <title>Cyber Security Word Guess Game</title>
     <!--Reset link-->
     <link rel="stylesheet" href="assets/css/reset.css">
     <!--CSS link-->
@@ -16,18 +17,30 @@
                 </header>
                 <br>
                 <div class="currentWord">Current Word</div>
-                <div class="underscore">_ _ _ _</div>
-                <div class="remainingGuess">Guesses Remaining</div>
+                <div class="underscore">_ </div>
+                <br>
+                <div class="numWins">Wins</div>
                 <div class="wrongGuess">Letters Already Guessed</div>
+                <div class="remainingGuess">_</div>
             </div>
+            <br> <br>
+
+            <!--<div class="container">
+                <div class="numWins">Wins</div>
+                <div class="wrongGuess">Letters Already Guessed</div>
+                <div class="remainingGuess">_</div>
+            </div>-->
 </body>
     <script src="assets/javascript/game1.js"></script>
 </html>
 
 <!--still left to do:-->
-<!--when a new game starts, need to reset wrongLetter array,
+<!--when a new game starts, need to reset wrongLetter array, underscores,
 and remainingGuesses counter. -->
-<!--still need to find a way to push underscores and right letters to screen
-and to get the moving eyes cartoony graphic in-->
-<!--also gotta make sure the current word is always fitting
-inside the div-->
+<!--display correctly guessed letters-->
+<!--funtionalise numWins variable to display-->
+<!--title divs for each remaining box. also how to get input from overflowing divs? -->
+<!--get the moving eyes cartoony graphic in, on cartoon  padlocck 8bit sttyle-->
+<!--want to include definitions for each word once its been guessed....in the popup?-->
+<!--make letters the only acceptable inputs-->
+<!--maybe have numWins, remainingGuess, and wrongGuess as 3 side by side columns so everything can be on one page-->
