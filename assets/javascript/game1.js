@@ -1,4 +1,7 @@
 //still can't get the correct input letters to display in current word box
+//also the win counter needs to be fixed it awards a win right after the game starts
+//would like to add a way for users to see definitions of words they've completed
+
 
 
 
