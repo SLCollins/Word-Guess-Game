@@ -50,6 +50,8 @@ function findLetter(letter){
     for (var i = 0; i < randWord.length; i++) {
         if(randWord[i] === letter) {
             letterPositions.push(i);
+            randWord[i] = answerGuess[i]
+            document.querySelector(".underscore").innerHTML = answerGuess.join();
         }
     }
     if (letterPositions.length <= 0) {
@@ -87,12 +89,12 @@ function fillAnswerGuess(letter) {
 };
 
 document.onkeydown = function(event) {
-    // If we finished a game, dump one keystroke and reset.
+    // Reset game with one keystroke when finished.
     if(gameOver) {
         gameReset();
         gameOver = false;
     } else {
-        // Check to make sure a-z was pressed.
+        // Check to make sure a letter was pressed.
         if(event.keyCode >= 65 && event.keyCode <= 90) {
             fillAnswerGuess(event.key.toUpperCase());
             updateDisplayContents();
