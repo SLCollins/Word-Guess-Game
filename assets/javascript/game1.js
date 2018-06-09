@@ -107,4 +107,4 @@ document.onkeydown = function(event) {
     }
 };
 
-resetGame();
+gameReset();
